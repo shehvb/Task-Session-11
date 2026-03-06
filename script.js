@@ -42,41 +42,41 @@ if(localStorage.getItem("products")){
 }
 
 function addProduct() {
-    product= {
-        name: productName.value,
-        price: productPrice.value,
-        cat: productCat.value,
-        desc: productsDesc.value,
-        image: `images/${productImage.files[0].name}`,
-    }
-    products.push(product);
-    console.log(products);
-    // clearForm();
-    displayProducts();
-    isValidProduct();
-    localStorage.setItem("products", JSON.stringify(products));
-    var storedProducts = JSON.parse(localStorage.getItem("products"));
-    console.log(storedProducts);
+    // product= {
+    //     name: productName.value,
+    //     price: productPrice.value,
+    //     cat: productCat.value,
+    //     desc: productsDesc.value,
+    //     image: `images/${productImage.files[0].name}`,
+    // }
+    // products.push(product);
+    // console.log(products);
+    // // clearForm();
+    // displayProducts();
+    // isValidProduct();
+    // localStorage.setItem("products", JSON.stringify(products));
+    // var storedProducts = JSON.parse(localStorage.getItem("products"));
+    // console.log(storedProducts);
     
-    sessionStorage.setItem("products", JSON.stringify(products));
-    var storedProductsSession = JSON.parse(sessionStorage.getItem("products"));
-    console.log(storedProductsSession);
+    // sessionStorage.setItem("products", JSON.stringify(products));
+    // var storedProductsSession = JSON.parse(sessionStorage.getItem("products"));
+    // console.log(storedProductsSession);
 
-//     var reader = new FileReader();
-//     reader.onload = function(e) {
-//         product = {
-//             name: productName.value,
-//             price: productPrice.value,
-//             cat: productCat.value,
-//             desc: productsDesc.value,
-//             image: e.target.result
-//         }
-//         products.push(product);
-//         displayProducts();
-//         localStorage.setItem("products", JSON.stringify(products));
-//         clearForm();
-//     }
-//     reader.readAsDataURL(document.getElementById("file-input").files[0]);
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        product = {
+            name: productName.value,
+            price: productPrice.value,
+            cat: productCat.value,
+            desc: productsDesc.value,
+            image: e.target.result
+        }
+        products.push(product);
+        displayProducts();
+        localStorage.setItem("products", JSON.stringify(products));
+        clearForm();
+    }
+    reader.readAsDataURL(document.getElementById("file-input").files[0]);
 }
 function clearForm() {
     productName.value=null;
