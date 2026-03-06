@@ -5,38 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
-    <div    class="add-prod">
+    <div class="add-prod">
         <h1>Add New Product</h1>
+        
         <label for="prod-name">Product Name</label>
-        <input type="text" id="prod-name"  required>
+        <input type="text" id="prod-name" required>
+        <span class="error-message" id="name-error"></span>
         
         <label for="prod-price">Product Price</label>
         <input type="number" id="prod-price">
+        <span class="error-message" id="price-error"></span>
         
-        <label for  ="prod-price">Product Categoray</label>
+        <label for="prod-cat">Product Category</label>
         <select id="prod-cat">
             <option value="Accessories">Accessories</option>
             <option value="Clothing">Clothing</option>
             <option value="Electronics">Electronics</option>
         </select>
+        <span class="error-message" id="cat-error"></span>
 
         <label for="prod-desc">Product description</label>
         <textarea id="prod-desc" rows="4" cols="50"></textarea>
+        <span class="error-message" id="desc-error"></span>
+        
         <input type="file" id="file-input" accept="image/*">
+        <span class="error-message" id="image-error"></span>
+        
         <button onclick="addProduct()" class="add-btn" id="update-btn">Add Product</button>
         <button onclick="showUpdatedProduct()" class="update-btn d-none" id="show-btn">Update Product</button>
-        
-        <input placeholder="Search by Name"
-        oninput="search()" type="search" class="search" id="search">
+        <div>           
+            <input placeholder="Search by Name" oninput="search()" type="search" class="search" id="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
         </div>
-        
-    <div class="products" id="products">
     </div>
-
-
-
+        
+    <div class="products" id="products"></div>
 
     <script src="script.js"></script>
 </body>

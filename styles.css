@@ -72,10 +72,16 @@ button:hover{
     padding: 15px;
     border-radius: 5px;
     width: 17%;
+    /* height: 60vh; */
     box-shadow: 0px 0px 7px rgba(134, 130, 130, 0.5);
 }
+
+.product  #delete-btn {
+    margin-top: auto; 
+}
+
 .products img{
-    margin: auto;
+    margin: 0 auto;
     width: 100%;
     border-radius: 5px; 
 }
@@ -84,6 +90,7 @@ button:hover{
     color: white;
     width: 100%;
     margin: 20px auto;
+    position: relative;
 }
 #delete-btn:hover{
     color: black;
@@ -111,4 +118,19 @@ button:hover{
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: all 0.3s ease;
+}
+.error-message {
+        color: red;
+        font-size: 12px;
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    
+input.error, select.error, textarea.error {
+    border: 2px solid red;
+}
+div i{
+    position: relative;
+    transform: translatex(-30px);
 }
